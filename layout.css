@@ -94,7 +94,7 @@ nav ul li a {
 
 @media screen and (max-width: 1200px) {
     .container {
-    padding: 50px 7vw 0;
+    padding: 50px 3vw 0;
     }
 }
 
@@ -108,7 +108,7 @@ nav ul li a {
     }
 
     .container {
-        padding: 50px 4vw 0; 
+        padding: 50px 1vw 0; 
     }
 }
 

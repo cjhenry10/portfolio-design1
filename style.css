@@ -77,6 +77,18 @@ header span {
     list-style: none;
 }
 
+#nav-left ul li, #nav-right ul li {
+    display: flex;
+}
+
+#nav-left ul li a {
+    justify-content: end;
+}
+
+#nav-right ul li a {
+    justify-content: start;
+}
+
 #nav-left ul a {
     line-height: 2.2rem;
     font-size: clamp(1.2rem, 1.5vw, 2rem);
@@ -92,12 +104,12 @@ header span {
 }
 
 #nav-right ul a {
-    line-height: 1.6rem;
+    line-height: 1.8rem;
     text-decoration: none;
     color: var(--textdark2);
     height: 100%;
     width: 100%;
-    font-size: 1.2rem;
+    font-size: clamp(1.1rem, 1.2vw, 1.5rem);
     font-family: 'Arvo', serif;
     padding-left: 0.5rem;
 }
