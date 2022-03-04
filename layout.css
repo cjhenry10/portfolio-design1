@@ -1,0 +1,154 @@
+body {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+    padding: 50px 10vw 0;
+}
+
+.item {
+    /* flex-grow: 0; */
+    flex-shrink: 1;
+    height: auto;
+}
+
+header {
+    border-bottom: 1px solid var(--bglight3);
+    background-color: inherit;
+    z-index: 200;
+    position: fixed;
+    width: 100%;
+    /* height: 40px; */
+}
+
+.top {
+    display: flex;
+}
+
+.top > * {
+    padding: 5px;
+}
+
+.name {
+    margin: auto 0;
+    font-size: 1.5rem;
+    font-family: 'Merriweather', serif;
+    padding-left: 15%;
+}
+
+.theme {
+    margin: auto 5% auto auto;
+    font-size: 1.2rem;
+    padding-right: 15%;
+}
+
+svg {
+    display: none;
+}
+
+main {
+    max-width: 920px;
+    margin: 0;
+}
+
+nav {
+    position: relative;
+}
+
+#nav-left {
+    margin-left: auto;
+    margin-right: 0;
+    display: block;
+}
+
+#nav-right {
+    margin-right: auto;
+    margin-left: 0;
+    /* margin-top: 10%; */
+}
+
+#nav-right ul {
+    padding-left: 0px;
+    position: sticky;
+    top: 20%;
+}
+
+#nav-left ul {
+    padding-left: 0px;
+    position: sticky;
+    top: 70px;
+}
+
+nav ul li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+@media screen and (max-width: 1200px) {
+    .container {
+    padding: 50px 7vw 0;
+    }
+}
+
+@media screen and (max-width: 780px) {
+    #nav-right {
+        display: none;
+    }
+    
+    main {
+        width: 920px !important;
+    }
+
+    .container {
+        padding: 50px 4vw 0; 
+    }
+}
+
+@media screen and (max-width: 576px) {
+    #nav-left {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        transition: transform 0.4s ease;
+        padding: 45px 0 0 10px;
+        height: 100%;
+        transform: translateX(-100%);
+    }
+
+    #nav-left.active {
+        transform: translateX(0);
+    }
+
+    #nav-left {
+        border-right: 1px solid var(--bgdark3);
+        background-color: var(--bgdark1);
+    }
+    
+    #nav-left.light {
+        background-color: var(--bglight1);
+    }
+
+    svg {
+        display: block;
+        padding-left: 5px;
+    }
+
+    .name {
+        padding-left: 5%;
+    }
+
+    .theme {
+        padding-right: 5%;
+    }
+}
