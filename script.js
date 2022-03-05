@@ -55,3 +55,30 @@ function theme() {
         });
     }
 }
+
+// scrollspy clone https://dev.to/nikhilroy2/how-to-create-javascript-scrollspy-vanilla-js-tutorial-35o9
+let menuSection = document.querySelectorAll("#nav-right li");
+
+// click
+menuSection.forEach(v => {
+    v.onclick = (() => {
+        setTimeout(() => {
+            menuSection.forEach(j => j.classList.remove("active"))
+        v.classList.add('active')
+        }, 300)
+    })
+})
+
+// scroll
+window.onscroll = (() => {
+    let mainSection = document.querySelectorAll("main > div");
+
+    mainSection.forEach((v, i) => {
+        let rect = v.getBoundingClientRect().y
+        if (rect < window.innerHeight-(0.9 * window.innerHeight)) {
+            menuSection.forEach(v => v.classList.remove("active"))
+            menuSection[i].classList.add("active")
+        }
+    })
+})
+console.log(window.innerHeight)
